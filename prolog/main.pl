@@ -54,7 +54,7 @@ main_svg -->
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">
 <svg version=\"1.1\" id=\"world\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"
-	 width=\"4096px\" height=\"4096px\" viewBox=\"0 0 4096 4096\" enable-background=\"new 0 0 4096 4096\" xml:space=\"preserve\">
+	 width=\"1024px\" height=\"1024px\" viewBox=\"0 0 4096 4096\" enable-background=\"new 0 0 4096 4096\" xml:space=\"preserve\">
 <g id=\"starz\">
 	<rect x=\"-46.911\" width=\"4189.822\" height=\"4096\"/>
 	<polygon fill=\"#FFFF00\" points=\"948.364,906.636 870.252,871.133 796.723,915.352 806.351,830.092 741.574,773.826
