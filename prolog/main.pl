@@ -9,6 +9,7 @@
 :- use_module(library(http/http_files)).
 
 http:location(js, '/js', []).
+user:file_search_path(js, './js').
 
 :- html_resource(jquery, [virtual(true), mime_type(text/javascript), requires('http://code.jquery.com/jquery-3.2.1.min.js')]).
 :- html_resource(movement, [virtual(true), ordered(true), requires(['http://code.jquery.com/jquery-3.2.1.min.js', js('movement.js')])]).
@@ -21,8 +22,8 @@ go(Port) :-
 % :- http_handler(/, tut_page, []).
 :- http_handler(/, main_page, []).
 
-:- http_handler(js(.), http_reply_from_files('js', []), [prefix]).
-
+:- http_handler(js(.), http_reply_from_files('js/', []),
+           [priority(1000), prefix]).
 
 main_page(_Request) :-
     reply_html_page(
