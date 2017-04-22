@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="world" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="4096px" height="4096px" viewBox="0 0 4096 4096" enable-background="new 0 0 4096 4096" xml:space="preserve">
-<g>
+<g id="starz">
 	<rect x="-46.911" width="4189.822" height="4096"/>
 	<polygon fill="#FFFF00" points="948.364,906.636 870.252,871.133 796.723,915.352 806.351,830.092 741.574,773.826 
 		825.636,756.636 859.131,677.643 901.457,752.278 986.935,759.724 929.031,823.042 	"/>
@@ -34,7 +34,9 @@
 	<polygon fill="#FFFF00" points="443.818,447.545 365.707,412.042 292.178,456.261 301.806,371.001 237.029,314.735 
 		321.091,297.545 354.586,218.552 396.911,293.188 482.389,300.633 424.485,363.951 	"/>
 </g>
-<circle fill="#666666" cx="2157.454" cy="2241.952" r="390.909"/>
-<circle fill="#666666" cx="2823.345" cy="1193" r="390.909"/>
-<ellipse fill="#FE330A" cx="1159.727" cy="1281.637" rx="79.545" ry="88.636"/>
+<g id="asteroids">
+	<circle fill="#666666" cx="2157.454" cy="2241.952" r="390.909"/>
+	<circle fill="#666666" cx="2823.345" cy="1193" r="390.909"/>
+</g>
+<ellipse id="cat" fill="#FE330A" cx="1535.091" cy="1193" rx="79.545" ry="88.637"/>
 </svg>
