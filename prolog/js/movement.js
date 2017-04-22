@@ -10,6 +10,7 @@ var charge = 0.0;
 var launch = false;
 var worldsizex = 4096.0;
 var worldsizey = 4096.0;
+var catrot = 0.0;
 
 function gameloop() {
 	$("#keysink").focus();
@@ -26,13 +27,16 @@ function gameloop() {
 			flying = true;
 			charging = false;
 			launch = false;
+			
 			var localr = Math.sqrt( (cx - myworldx) * (cx - myworldx) + (cy - myworldy) * (cy - myworldy) );
 
-			catvx = charge * (cx - myworldx) / localr;
-			catvy = charge * (cy - myworldy) / localr;
+			catvx = charge * (cx - myworldx) / localr + catrot * (cy - myworldy) / localr;
+			catvy = charge * (cy - myworldy) / localr + catrot * (cx - myworldx) / localr;
 			// move cat free frame to get off ground
 			cx += catvx * 1.5;
 			cy += catvy * 1.5;
+			charge = 0.0;
+			catrot = 0.0;			
 		} else {
 			return;
 		}
@@ -89,17 +93,17 @@ function gameloop() {
 };
 
 function rotaterocket(rot) {
-
+    catrot += rot;
 };
 
 function keydown(key) {
-	if(key == 37)rotaterocket(-2);
-	else if(key == 39)rotaterocket(2);
-	else if(key == 38)charging = true;
+	if(key == 37)rotaterocket(-0.2);
+	else if(key == 39)rotaterocket(0.2);
+	else if(key == 32 || key == 38)charging = true;
 };
 
 function keyup(key) {
-	if(key == 38) {
+	if(key == 32 || key == 38) {
 		charging = false;
 		launch = true;
 	}
