@@ -19,10 +19,11 @@ function gameloop() {
 	var cy = Number($("#cat").attr("cy"));
 
 	if (!flying) {
-		if(charging) {}
+		if(charging) {
 			charge += 5.0;
 			charge = Math.min(50.0, charge);
-
+		}
+		
 		if(launch) {
 			flying = true;
 			charging = false;
@@ -94,6 +95,9 @@ function gameloop() {
 
 function rotaterocket(rot) {
     catrot += rot;
+    if (catrot < -3.0)catrot = -3.0;
+    else if (catrot > 3.0)catrot = 3.0;
+    console.log('catrot ' + catrot);
 };
 
 function keydown(key) {
