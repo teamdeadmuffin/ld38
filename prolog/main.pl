@@ -57,16 +57,16 @@ main_svg -->
     contents_of_file(icons('svgtail.svf')).
 
 asteroids -->
-    asteroids(100, []).
+    asteroids(300, []).
 
 asteroids(0, _) --> [].
 asteroids(N, AsteroidsSoFar) -->
     { succ(NN, N),
       repeat,
-      random_between(2048, 63488, X),
-      random_between(2048, 63488, Y),
+      random_between(16384, 49152, X),
+      random_between(16384, 49152, Y),
       debug(game, 'trying ~w ~w for ~w', [X, Y, N]),
-      maplist(safe_location(X, Y), [8196.0-8196.0 | AsteroidsSoFar]), % include the cat
+      maplist(safe_location(X, Y), [32786.0-32786.0 | AsteroidsSoFar]), % include the cat
       random_between(1, 6, M),
       format(string(S) ,
  '<use xlink:href="#asteroid~w"  class="asteroid" id="a~w" width="404" height="404" x="-202" y="-201.999" transform="translate(~w ~w)" gamex="~w" gamey="~w" overflow="visible"/>~n', [M, N, X, Y, X, Y])
