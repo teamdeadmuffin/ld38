@@ -12,8 +12,8 @@ var launch = false;
 // boundaries within which we wrap
 var worldsizex = 65536.0;
 var worldsizey = 65536.0;
-var worldmarginx = 1024.0;
-var worldmarginy = 1024.0;
+var worldmarginx = 8196.0;
+var worldmarginy = 8196.0;
 var aim = 0.0;   // the aim for the cat on ground in sideways impulse
 var catrot = 0.0;  // cat's spatial rotation
 var cx = 32768.0;

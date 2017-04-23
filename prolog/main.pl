@@ -59,12 +59,20 @@ main_svg -->
 asteroids -->
     asteroids(300, []).
 
+
+marg(24576).
+
+limits(N , Max) :-
+    marg(N),
+    Max is 65536 - N.
+
 asteroids(0, _) --> [].
 asteroids(N, AsteroidsSoFar) -->
     { succ(NN, N),
       repeat,
-      random_between(16384, 49152, X),
-      random_between(16384, 49152, Y),
+      limits(A,B),
+      random_between(A, B, X),
+      random_between(A, B, Y),
       debug(game, 'trying ~w ~w for ~w', [X, Y, N]),
       maplist(safe_location(X, Y), [32786.0-32786.0 | AsteroidsSoFar]), % include the cat
       random_between(1, 6, M),
