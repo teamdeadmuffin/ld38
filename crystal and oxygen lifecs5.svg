@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="595.28px" height="841.89px" viewBox="0 0 595.28 841.89" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
+<symbol  id="crystal1" viewBox="-25.399 -46.773 50.798 93.545">
+	<polygon opacity="0.66" fill="#38A22B" stroke="#95D385" stroke-width="4" stroke-miterlimit="10" points="7.888,-34.579 
+		-5.093,-44.035 -13.224,-33.953 -23.259,16.709 -2.011,43.795 23.149,19.549 	"/>
+	<polygon fill="#95D385" points="17.512,4.176 -9.007,14.012 -2.504,42.815 23.149,19.549 	"/>
+	<polygon fill="#95D385" points="-1.187,-35.152 -5.093,-44.035 -8.998,14.476 -6.89,14.823 	"/>
+</symbol>
+<symbol  id="crystal2" viewBox="-25.399 -46.773 50.798 93.546">
+	<polygon opacity="0.66" fill="#101E88" stroke="#6DA7C0" stroke-width="4" stroke-miterlimit="10" points="7.888,-34.579 
+		-5.093,-44.035 -13.224,-33.952 -23.259,16.709 -2.011,43.796 23.149,19.549 	"/>
+	<polygon fill="#6DA7C0" points="17.512,4.176 -9.007,14.012 -2.504,42.815 23.149,19.549 	"/>
+	<polygon fill="#6DA7C0" points="-1.187,-35.152 -5.093,-44.035 -8.998,14.476 -6.89,14.823 	"/>
+</symbol>
+<symbol  id="crystal3" viewBox="-25.399 -46.773 50.797 93.546">
+	<polygon opacity="0.66" fill="#EE0B1E" stroke="#EF6D8E" stroke-width="4" stroke-miterlimit="10" points="7.888,-34.579 
+		-5.093,-44.035 -13.224,-33.952 -23.259,16.709 -2.011,43.796 23.148,19.549 	"/>
+	<polygon fill="#EF6D8E" points="17.512,4.176 -9.007,14.012 -2.504,42.815 23.148,19.549 	"/>
+	<polygon fill="#EF6D8E" points="-1.187,-35.152 -5.093,-44.035 -8.998,14.476 -6.89,14.823 	"/>
+</symbol>
+<symbol  id="life" viewBox="-26.353 -36.202 52.706 72.404">
+	
+		<image overflow="visible" width="1600" height="1300" xlink:href="AA9CB50C.jpg"  transform="matrix(0.0329 0 0 -0.0329 -26.353 36.2021)">
+	</image>
+	<polygon fill="none" points="26.353,-36.202 -13.989,-36.202 -13.989,-12.217 26.353,-12.217 	"/>
+	<text transform="matrix(1 0 0 -1 -13.9888 -29.6187)" font-family="'MyriadPro-Regular'" font-size="24.5094">life</text>
+</symbol>
+<symbol  id="oxygen" viewBox="-28.334 -72.389 56.667 144.778">
+	<path fill="#302C2D" d="M-0.001,34.278L-0.001,34.278c-4.583,0-8.333,3.75-8.333,8.333v14.667c0,4.583,3.75,8.333,8.333,8.333l0,0
+		c4.584,0,8.334-3.75,8.334-8.333V42.611C8.333,38.028,4.583,34.278-0.001,34.278z"/>
+	<path fill="#88847D" d="M8.999-72.389H-7.667c-6.601,0-12,5.4-12,12v90.351c0,6.6,5.399,12,12,12H8.999c6.601,0,12-5.4,12-12
+		v-90.351C20.999-66.989,15.6-72.389,8.999-72.389z"/>
+	<path fill="#302C2D" d="M21.352-0.973h-42.704c-3.84,0-6.981,3.142-6.981,6.981l0,0c0,3.84,3.142,6.981,6.981,6.981h42.704
+		c3.84,0,6.981-3.142,6.981-6.981l0,0C28.333,2.168,25.191-0.973,21.352-0.973z"/>
+	<path fill="#302C2D" d="M19.666-51.722h-39.333c-4.767,0-8.667,3.9-8.667,8.667l0,0c0,4.767,3.9,8.667,8.667,8.667h39.333
+		c4.767,0,8.667-3.9,8.667-8.667l0,0C28.333-47.822,24.433-51.722,19.666-51.722z"/>
+	<path fill="#827E79" d="M19.246,55.389c0-9.389-2.004-17-4.477-17c-2.472,0-4.476,7.611-4.476,17c0,9.389,2.004,17,4.476,17
+		C17.242,72.389,19.246,64.778,19.246,55.389z"/>
+	<path fill="#827E79" d="M10.245,55.389c0-9.389-2.442-17-5.456-17s-5.456,7.611-5.456,17c0,9.389,2.442,17,5.456,17
+		S10.245,64.778,10.245,55.389z"/>
+	<polygon fill="#827E79" points="14.897,38.889 4.789,38.889 4.789,72.389 14.897,72.389 	"/>
+	<path fill="#90D5E2" d="M18.713,55.389c0-7.18-1.708-13-3.815-13c-2.106,0-3.814,5.82-3.814,13s1.708,13,3.814,13
+		C17.005,68.389,18.713,62.569,18.713,55.389z"/>
+	<text transform="matrix(0.4715 0 0 -1 -5.584 18.479)" font-family="'MyriadPro-Regular'" font-size="20.4706">o2</text>
+</symbol>
+<g id="crystal_blue">
+	
+		<use xlink:href="#crystal2"  width="50.798" height="93.546" x="-25.399" y="-46.773" transform="matrix(1 0 0 -1 158.7192 243.4453)" overflow="visible"/>
+</g>
+<g id="green">
+	
+		<use xlink:href="#crystal1"  width="50.798" height="93.545" x="-25.399" y="-46.773" transform="matrix(1 0 0 -1 93.1846 242.4648)" overflow="visible"/>
+</g>
+<g id="red">
+	
+		<use xlink:href="#crystal3"  width="50.797" height="93.546" x="-25.399" y="-46.773" transform="matrix(1 0 0 -1 232.0527 243.4453)" overflow="visible"/>
+</g>
+<g id="o2">
+	
+		<use xlink:href="#oxygen"  width="56.667" height="144.778" x="-28.334" y="-72.389" transform="matrix(1 0 0 -1 505.334 156.2334)" overflow="visible"/>
+</g>
+<g id="pixel_life">
+	
+		<use xlink:href="#life"  width="52.706" height="72.404" x="-26.353" y="-36.202" transform="matrix(1 0 0 -1 169.1553 384.8687)" overflow="visible"/>
+</g>
+</svg>
