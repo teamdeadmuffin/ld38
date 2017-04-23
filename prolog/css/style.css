@@ -1,0 +1,23 @@
+#play-container {
+	width: 1280px;
+	height: 1020px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#keysink {
+	height: 1px;
+	width:  1px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	
+}
+
+body {
+	overflow: hidden;
+	  width: 100%;
+  height: 100%;
+}
