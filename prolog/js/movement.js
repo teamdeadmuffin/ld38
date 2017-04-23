@@ -41,8 +41,16 @@ function gameloop() {
 			
 			var localr = Math.sqrt( (cx - myworldx) * (cx - myworldx) + (cy - myworldy) * (cy - myworldy) );
 
-			catvx = charge * (cx - myworldx) / localr + Math.min(charge, aim) * (cy - myworldy) / localr;
-			catvy = charge * (cy - myworldy) / localr + Math.min(charge, aim) * (cx - myworldx) / localr;
+			if (aim < 0)
+				aim = Math.max(-charge, aim);
+			else 
+			   aim = Math.min(charge, aim);
+			   
+			console.log("aim " + String(aim));
+			console.log("charge " + String(charge));
+			
+			catvx = charge * (cx - myworldx) / localr - aim * (cy - myworldy) / localr;
+			catvy = charge * (cy - myworldy) / localr + aim * (cx - myworldx) / localr;
 			// move cat free frame to get off ground
 			cx += catvx * 3.5;
 			cy += catvy * 3.5;
@@ -105,8 +113,8 @@ function gameloop() {
 };
 
 function keydown(key) {
-	if(key == 37)aimdelta = -5;
-	else if(key == 39)aimdelta = 5;
+	if(key == 37)aimdelta = -10;
+	else if(key == 39)aimdelta = 10;
 	else if(key == 32 || key == 38)charging = true;
 };
 
@@ -123,10 +131,8 @@ function keyup(key) {
 
 $(function() {
      $("#keysink").focus().keydown(function(event) {
-		console.log("down " + event.which);   // 37 left  38 up 39 right
                 keydown(event.which);
 	}).keyup(function(event) {
-		console.log("up " + String(event.which));   // 37 left  38 up 39 right
                 keyup(event.which);
 	});
      window.setInterval(gameloop, 100);
