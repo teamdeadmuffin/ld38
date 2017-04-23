@@ -19,7 +19,7 @@ var catrot = 0.0;  // cat's spatial rotation
 var cx = 32768.0;
 var cy = 32768.0;
 var aimdelta = 0.0;
-var aimlimit = 100.0;
+var aimlimit = 300.0;
 
 function gameloop() {
 	$("#keysink").focus();
@@ -34,7 +34,6 @@ function gameloop() {
 			if(aim > aimlimit)aim = aimlimit;
 		}
 		
-		
 		if(launch) {
 			flying = true;
 			charging = false;
@@ -42,8 +41,8 @@ function gameloop() {
 			
 			var localr = Math.sqrt( (cx - myworldx) * (cx - myworldx) + (cy - myworldy) * (cy - myworldy) );
 
-			catvx = charge * (cx - myworldx) / localr + aim * (cy - myworldy) / localr;
-			catvy = charge * (cy - myworldy) / localr + aim * (cx - myworldx) / localr;
+			catvx = charge * (cx - myworldx) / localr + Math.min(charge, aim) * (cy - myworldy) / localr;
+			catvy = charge * (cy - myworldy) / localr + Math.min(charge, aim) * (cx - myworldx) / localr;
 			// move cat free frame to get off ground
 			cx += catvx * 3.5;
 			cy += catvy * 3.5;
