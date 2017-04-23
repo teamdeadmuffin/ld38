@@ -102,8 +102,7 @@ function gameloop() {
 		else if (cy > worldsizey - worldmarginy)
 			cy -= worldsizey - worldmarginy;
 			
-		$("#cat").attr("cx", String(cx));
-		$("#cat").attr("cy", String(cy));
+		$("#cat").attr("transform", "translate(" + String(cx) + ", " + String(cy) + ") rotate(180) scale(-1 1)")
 
 		$("#scrollme").attr("transform", "translate(" + String(-cx + 512) + ", " + String(-cy + 512) + ")")
 	} else {

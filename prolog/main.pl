@@ -11,9 +11,11 @@
 http:location(js, '/js', []).
 http:location(css, '/css', []).
 http:location(img, '/img', []).
+http:location(audio, '/audio', []).
 user:file_search_path(css, './css').
 user:file_search_path(js, './js').
 user:file_search_path(icons, './icons').
+user:file_search_path(audio, './audio').
 
 :- html_resource(jquery, [virtual(true), mime_type(text/javascript), requires('http://code.jquery.com/jquery-3.2.1.min.js')]).
 :- html_resource(movement, [virtual(true), ordered(true), requires(['http://code.jquery.com/jquery-3.2.1.min.js', js('movement.js')])]).
@@ -33,6 +35,8 @@ go(Port) :-
                 [priority(1000), prefix]).
 :- http_handler(img(.), http_reply_from_files('icons/', []),
                 [priority(1000), prefix]).
+:- http_handler(audio(.), http_reply_from_files('audio/', []),
+                [priority(1000), prefix]).
 
 main_page(_Request) :-
     reply_html_page(
@@ -47,7 +51,12 @@ main_body -->
     control_panel.
 
 control_panel -->
-    html(div(input([id(keysink), type(text)], []))).
+    {
+        random_member(Src, ['/audio/loop1.mp3', '/audio/loop2.mp3'])
+    },
+    html([div(input([id(keysink), type(text)], [])),
+         audio([loop(true), src(Src), autoplay(true)], [])
+         ]).
 
 main_svg -->
     contents_of_file(icons('svgheader.svf')),
