@@ -10,8 +10,10 @@
 
 http:location(js, '/js', []).
 http:location(css, '/css', []).
+http:location(img, '/img', []).
 user:file_search_path(css, './css').
 user:file_search_path(js, './js').
+user:file_search_path(icons, './icons').
 
 :- html_resource(jquery, [virtual(true), mime_type(text/javascript), requires('http://code.jquery.com/jquery-3.2.1.min.js')]).
 :- html_resource(movement, [virtual(true), ordered(true), requires(['http://code.jquery.com/jquery-3.2.1.min.js', js('movement.js')])]).
@@ -29,6 +31,8 @@ go(Port) :-
            [priority(1000), prefix]).
 :- http_handler(css(.), http_reply_from_files('css/', []),
                 [priority(1000), prefix]).
+:- http_handler(img(.), http_reply_from_files('icons/', []),
+                [priority(1000), prefix]).
 
 main_page(_Request) :-
     reply_html_page(
@@ -45,14 +49,58 @@ main_body -->
 control_panel -->
     html(div(input([id(keysink), type(text)], []))).
 
-/*%    strength_meter,
-    tilt_meter.
+main_svg -->
+    contents_of_file(icons('svgheader.svf')),
+    contents_of_file(icons('symbols.svf')),
+    contents_of_file(icons('scrollmehdr.svf')),
+    asteroids,
+    contents_of_file(icons('svgtail.svf')).
 
-strength_meter -->
-    html(div(
-*/
+asteroids -->
+    asteroids(300, []).
 
 
+marg(24576).
+
+limits(N , Max) :-
+    marg(N),
+    Max is 65536 - N.
+
+asteroids(0, _) --> [].
+asteroids(N, AsteroidsSoFar) -->
+    { succ(NN, N),
+      repeat,
+      limits(A,B),
+      random_between(A, B, X),
+      random_between(A, B, Y),
+      debug(game, 'trying ~w ~w for ~w', [X, Y, N]),
+      maplist(safe_location(X, Y), [32786.0-32786.0 | AsteroidsSoFar]), % include the cat
+      random_between(1, 6, M),
+      random_between(0, 359, R),
+      RadScale is (6.0 + 6.0 * random_float) / 10.0,
+      GRad is 200.0 * RadScale + 80.0,
+      format(string(S) ,
+ '<use xlink:href="#asteroid~w"  class="asteroid" id="a~w" width="404" height="404" x="-202" y="-201.999" transform="translate(~w ~w) scale(~w) rotate(~w 0 0)" gamerad="~w" gamex="~w" gamey="~w" overflow="visible"/>~n', [M, N, X, Y, RadScale, R, GRad, X, Y])
+    },
+    html(\[S]),
+    !,
+    asteroids(NN, [X-Y | AsteroidsSoFar]).
+
+
+safe_location(X, Y, AX-AY) :-
+    RSQ is (X - AX)* (X - AX) + (Y - AY) * (Y - AY),
+    RSQ > 640000.  % 800 pixels distance
+
+
+% transform was "matrix(1 0 0 -1 ~w ~w)
+
+contents_of_file(File) -->
+    {
+    read_file_to_string(File, S, [])
+    },
+    html(\[S]).
+
+/*
 main_svg -->
     html(\["
 <?xml version=\"1.0\" encoding=\"utf-8\"?>
@@ -102,4 +150,4 @@ main_svg -->
 <ellipse id=\"cat\" fill=\"#FE330A\" cx=\"1535.091\" cy=\"1193\" rx=\"79.545\" ry=\"88.637\"/>
 
 "]).
-
+*/
