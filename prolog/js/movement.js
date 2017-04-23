@@ -87,11 +87,13 @@ function gameloop() {
 		});
 
 	if(flying) {
+		// move the cat
 		catvx = catvx + gx;
 		catvy = catvy + gy;
 		cx = cx + catvx;
 		cy = cy + catvy;
 		
+		// wrap the cat in the world
 		if (cx < worldmarginx)
 			cx += worldsizex - worldmarginx;
 		else if (cx > worldsizex - worldmarginx)
@@ -102,7 +104,10 @@ function gameloop() {
 		else if (cy > worldsizey - worldmarginy)
 			cy -= worldsizey - worldmarginy;
 			
-		$("#cat").attr("transform", "translate(" + String(cx) + ", " + String(cy) + ") rotate(180) scale(-1 1)")
+		// rotate the cat
+	   catrot = 180.0 + 180.0 / 3.1416 * Math.atan2(gx, gy);
+	   
+		$("#cat").attr("transform", "translate(" + String(cx) + ", " + String(cy) + ") scale(-1 1) rotate(" + String(catrot) + ")")
 
 		$("#scrollme").attr("transform", "translate(" + String(-cx + 512) + ", " + String(-cy + 512) + ")")
 	} else {
