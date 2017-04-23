@@ -1,35 +1,36 @@
 var gamelooptimer;
 var catvx = 12.0;
 var catvy = 1.0;
-var myworldx;
-var myworldy;
-var gconst = 1600000.0;
+var myworldx;   // when landed, xy for center of our world
+var myworldy;  
+var gconst = 1600000.0;      // was 1600000.0;
 var flying = true;
 var charging = false;
 var charge = 0.0;
 var launch = false;
-var worldsizex = 4096.0;
-var worldsizey = 4096.0;
+
+// boundaries within which we wrap
+var worldsizex = 65536.0;
+var worldsizey = 65536.0;
+var worldmarginx = 1024.0;
+var worldmarginy = 1024.0;
 var aim = 0.0;   // the aim for the cat on ground in sideways impulse
 var catrot = 0.0;  // cat's spatial rotation
-var cx = 1535.0;
-var cy = 1193.0;
+var cx = 8196.0;
+var cy = 8196.0;
 var aimdelta = 0.0;
 
 function gameloop() {
 	$("#keysink").focus();
 
-	var cx = Number($("#cat").attr("cx"));
-	var cy = Number($("#cat").attr("cy"));
-
 	if (!flying) {
 		if(charging) {
 			charge += 5.0;
-			charge = Math.min(50.0, charge);
+			charge = Math.min(300.0, charge);
 			
 			aim += aimdelta;
-			if(aim < -3.0)aim = -3.0;
-			if(aim > 3.0)aim = 3.0;
+			if(aim < -3.0)aim = -12.0;
+			if(aim > 3.0)aim = 12.0;
 		}
 		
 		
@@ -56,13 +57,13 @@ function gameloop() {
 
 // compute the local g
 
-        var gx = 0.0;
-        var gy = 0.0;
+  var gx = 0.0;
+  var gy = 0.0;
 
-	$("#asteroids circle").each(function() {
-			var acx = Number($(this).attr("cx"));
-			var acy = Number($(this).attr("cy"));
-			var grnd = Number($(this).attr("r"));
+	$("#asteroids use").each(function() {
+			var acx = Number($(this).attr("gamex"));
+			var acy = Number($(this).attr("gamey"));
+			var grnd = 200;  // TODO make diff sized asteroids Number($(this).attr("r"));
 
 			var r = Math.sqrt((cx - acx)*(cx - acx) + (cy - acy) * (cy - acy) );
 			var g = gconst / r / r;
@@ -77,25 +78,26 @@ function gameloop() {
 			}
 		});
 
-	catvx = catvx + gx;
-	catvy = catvy + gy;
-
 	if(flying) {
-		var newcx = cx + catvx;
-		var newcy = cy + catvy;
+		catvx = catvx + gx;
+		catvy = catvy + gy;
+		cx = cx + catvx;
+		cy = cy + catvy;
 		
-		if (newcx < 0.0)
-			newcx += worldsizex;
-		else if (newcx > worldsizex)
-			newcx -= worldsizex;
+		if (cx < worldmarginx)
+			cx += worldsizex - worldmarginx;
+		else if (cx > worldsizex - worldmarginx)
+			cx -= worldsizex - worldmarginx;
 			
-		if (newcy < 0.0)
-			newcy += worldsizey;
-		else if (newcy > worldsizey)
-			newcy -= worldsizey;
+		if (cy < worldmarginy)
+			cy += worldsizey - worldmarginy;
+		else if (cy > worldsizey - worldmarginy)
+			cy -= worldsizey - worldmarginy;
 			
-		$("#cat").attr("cx", String(cx + catvx));
-		$("#cat").attr("cy", String(cy + catvy));
+		$("#cat").attr("cx", String(cx));
+		$("#cat").attr("cy", String(cy));
+
+		$("#scrollme").attr("transform", "translate(" + String(-cx + 512) + ", " + String(-cy + 512) + ")")
 	} else {
 		catvx = 0.0;
 		catvy = 0.0;
@@ -118,19 +120,6 @@ function keyup(key) {
 
 };
 
-function requestFullScreen(element) {
-    // Supports most browsers and their versions.
-    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-
-    if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
-    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-        var wscript = new ActiveXObject("WScript.Shell");
-        if (wscript !== null) {
-            wscript.SendKeys("{F11}");
-        }
-    }
-}
 
 $(function() {
      $("#keysink").focus().keydown(function(event) {
@@ -141,9 +130,7 @@ $(function() {
                 keyup(event.which);
 	});
      window.setInterval(gameloop, 100);
-     
-     var elem = document.body; // Make the body go full screen.
-     requestFullScreen(elem);
+
 });
 
 
