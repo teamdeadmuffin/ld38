@@ -16,8 +16,8 @@ var worldmarginx = 1024.0;
 var worldmarginy = 1024.0;
 var aim = 0.0;   // the aim for the cat on ground in sideways impulse
 var catrot = 0.0;  // cat's spatial rotation
-var cx = 8196.0;
-var cy = 8196.0;
+var cx = 32768.0;
+var cy = 32768.0;
 var aimdelta = 0.0;
 
 function gameloop() {

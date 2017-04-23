@@ -57,14 +57,14 @@ main_svg -->
     contents_of_file(icons('svgtail.svf')).
 
 asteroids -->
-    asteroids(10, []).
+    asteroids(100, []).
 
 asteroids(0, _) --> [].
 asteroids(N, AsteroidsSoFar) -->
     { succ(NN, N),
       repeat,
-      random_between(5120, 11264, X),
-      random_between(5120, 11264, Y),
+      random_between(2048, 63488, X),
+      random_between(2048, 63488, Y),
       debug(game, 'trying ~w ~w for ~w', [X, Y, N]),
       maplist(safe_location(X, Y), [8196.0-8196.0 | AsteroidsSoFar]), % include the cat
       random_between(1, 6, M),
