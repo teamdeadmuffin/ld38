@@ -105,11 +105,15 @@ function gameloop() {
 			cy -= worldsizey - worldmarginy;
 			
 		// rotate the cat
-	   catrot = 180.0 + 180.0 / 3.1416 * Math.atan2(gx, gy);
+	   catrot = 180.0 / 3.1416 * Math.atan2(gx, gy);
 	   
-		$("#cat").attr("transform", "translate(" + String(cx) + ", " + String(cy) + ") scale(-1 1) rotate(" + String(catrot) + ")")
+		$("#cat").attr("transform", "translate(" + String(cx) + ", " + String(cy) + ") scale(-1 1) rotate(" + String(180.0 +catrot) + " 0 0)")
 
-		$("#scrollme").attr("transform", "translate(" + String(-cx + 512) + ", " + String(-cy + 512) + ")")
+//		$("#scrollme").attr("transform", "translate(" + String(-cx + 640) + ", " + String(-cy + 540) + ")");
+
+		$("#scrollme").attr("transform", "translate(" + String(640-cx) + ", " + String(520-cy) + ") rotate(" + (catrot) + 
+		    " " + String(cx) + " " + String(cy) + ")");
+
 	} else {
 		catvx = 0.0;
 		catvy = 0.0;
