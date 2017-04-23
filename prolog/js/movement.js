@@ -71,7 +71,7 @@ function gameloop() {
 	$("#asteroids use").each(function() {
 			var acx = Number($(this).attr("gamex"));
 			var acy = Number($(this).attr("gamey"));
-			var grnd = 200;  // TODO make diff sized asteroids Number($(this).attr("r"));
+			var grnd = Number($(this).attr("gamerad"));
 
 			var r = Math.sqrt((cx - acx)*(cx - acx) + (cy - acy) * (cy - acy) );
 			var g = gconst / r / r;

@@ -76,8 +76,11 @@ asteroids(N, AsteroidsSoFar) -->
       debug(game, 'trying ~w ~w for ~w', [X, Y, N]),
       maplist(safe_location(X, Y), [32786.0-32786.0 | AsteroidsSoFar]), % include the cat
       random_between(1, 6, M),
+      random_between(0, 359, R),
+      RadScale is (6.0 + 6.0 * random_float) / 10.0,
+      GRad is 200.0 * RadScale + 80.0,
       format(string(S) ,
- '<use xlink:href="#asteroid~w"  class="asteroid" id="a~w" width="404" height="404" x="-202" y="-201.999" transform="translate(~w ~w)" gamex="~w" gamey="~w" overflow="visible"/>~n', [M, N, X, Y, X, Y])
+ '<use xlink:href="#asteroid~w"  class="asteroid" id="a~w" width="404" height="404" x="-202" y="-201.999" transform="translate(~w ~w) scale(~w) rotate(~w 0 0)" gamerad="~w" gamex="~w" gamey="~w" overflow="visible"/>~n', [M, N, X, Y, RadScale, R, GRad, X, Y])
     },
     html(\[S]),
     !,
