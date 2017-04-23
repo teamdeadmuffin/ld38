@@ -19,6 +19,7 @@ var catrot = 0.0;  // cat's spatial rotation
 var cx = 32768.0;
 var cy = 32768.0;
 var aimdelta = 0.0;
+var aimlimit = 100.0;
 
 function gameloop() {
 	$("#keysink").focus();
@@ -29,8 +30,8 @@ function gameloop() {
 			charge = Math.min(300.0, charge);
 			
 			aim += aimdelta;
-			if(aim < -3.0)aim = -12.0;
-			if(aim > 3.0)aim = 12.0;
+			if(aim < -aimlimit)aim = -aimlimit;
+			if(aim > aimlimit)aim = aimlimit;
 		}
 		
 		
@@ -44,8 +45,8 @@ function gameloop() {
 			catvx = charge * (cx - myworldx) / localr + aim * (cy - myworldy) / localr;
 			catvy = charge * (cy - myworldy) / localr + aim * (cx - myworldx) / localr;
 			// move cat free frame to get off ground
-			cx += catvx * 1.5;
-			cy += catvy * 1.5;
+			cx += catvx * 3.5;
+			cy += catvy * 3.5;
 			charge = 0.0;
 			aim = 0.0;			
 		} else {
@@ -105,8 +106,8 @@ function gameloop() {
 };
 
 function keydown(key) {
-	if(key == 37)aimdelta = -0.2;
-	else if(key == 39)aimdelta = 0.2;
+	if(key == 37)aimdelta = -5;
+	else if(key == 39)aimdelta = 5;
 	else if(key == 32 || key == 38)charging = true;
 };
 
