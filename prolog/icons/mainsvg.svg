@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="scrollme" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="whole" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="4096px" height="4096px" viewBox="0 0 4096 4096" enable-background="new 0 0 4096 4096" xml:space="preserve">
 <symbol  id="asteroid1" viewBox="-202 -202 404 404">
 	<path fill="#695E55" stroke="#000000" stroke-width="4" stroke-miterlimit="10" d="M192.213,0c0-110.457-87.8-200-196.105-200
@@ -597,27 +597,29 @@
 	<path fill="#478352" d="M23.527,153.2c5.066,1.615,10.98,0.497,13.4-5.318c2.418-5.814-5.719-10.86-10.627-12.16
 		c-4.908-1.3-14.143,11.856-14.143,11.856C12.022,147.849,18.443,152.827,23.527,153.2z"/>
 </symbol>
-<g id="world">
-	<g id="bkgndtile">
-		<image overflow="visible" width="1024" height="1024" xlink:href="bg3cs5.jpg"  transform="matrix(1 0 0 1 253.2524 -59.3848)">
-		</image>
+<g id="scrollme">
+	<g id="world">
+		<g id="bkgndtile">
+			<image overflow="visible" width="1024" height="1024" xlink:href="bg3cs5.jpg"  transform="matrix(1 0 0 1 253.2524 -59.3848)">
+			</image>
+		</g>
+		<g id="asteroids">
+			
+				<use xlink:href="#asteroid2"  width="404" height="404" id="a1_2_" x="-202" y="-201.999" transform="matrix(1 0 0 -1 -174.998 712.4199)" overflow="visible"/>
+			
+				<use xlink:href="#asteroid1"  width="404" height="404" id="a2_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 445.252 494.6152)" overflow="visible"/>
+			
+				<use xlink:href="#asteroid3"  width="403.858" height="402.442" id="a3_2_" x="-201.929" y="-201.221" transform="matrix(1 0 0 -1 840.6582 -70.377)" overflow="visible"/>
+			
+				<use xlink:href="#asteroid4"  width="404" height="404" id="a4_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 -522.1133 277.6309)" overflow="visible"/>
+			
+				<use xlink:href="#asteroid5"  width="404" height="404" id="a5_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 1052.0293 524.1875)" overflow="visible"/>
+			
+				<use xlink:href="#asteroid6"  width="404" height="404" id="a6_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 285.8945 -688.5)" overflow="visible"/>
+		</g>
 	</g>
-	<g id="asteroids">
-		
-			<use xlink:href="#asteroid2"  width="404" height="404" id="a1_2_" x="-202" y="-201.999" transform="matrix(1 0 0 -1 -174.998 712.4199)" overflow="visible"/>
-		
-			<use xlink:href="#asteroid1"  width="404" height="404" id="a2_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 445.252 494.6152)" overflow="visible"/>
-		
-			<use xlink:href="#asteroid3"  width="403.858" height="402.442" id="a3_2_" x="-201.929" y="-201.221" transform="matrix(1 0 0 -1 840.6582 -70.377)" overflow="visible"/>
-		
-			<use xlink:href="#asteroid4"  width="404" height="404" id="a4_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 -522.1133 277.6309)" overflow="visible"/>
-		
-			<use xlink:href="#asteroid5"  width="404" height="404" id="a5_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 1052.0293 524.1875)" overflow="visible"/>
-		
-			<use xlink:href="#asteroid6"  width="404" height="404" id="a6_2_" x="-202" y="-202" transform="matrix(1 0 0 -1 285.8945 -688.5)" overflow="visible"/>
+	<g id="player">
+		<circle id="cat" fill="#FE330A" cx="0" cy="0" r="80"/>
 	</g>
-</g>
-<g id="player">
-	<circle id="cat" fill="#FE330A" cx="0" cy="0" r="80"/>
 </g>
 </svg>
