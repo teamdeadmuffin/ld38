@@ -1,3 +1,8 @@
+@font-face{ 
+	font-family: 'serif_pixel';
+	src: url('/img/serif_pixel-7.ttf') format('truetype');
+}
+
 #play-container {
 	width: 1280px;
 	height: 1020px;
@@ -34,6 +39,12 @@ body.game {
 	text-align: center;
 }
 
+#winbody {
+	background-color: #141728;
+	width: 100%;
+	text-align: center;
+}
+
 #tutbody .tut {
 	width: 30%;
 	vertical-align: top;
@@ -46,4 +57,72 @@ body.game {
 	width: 239px;
 	height: 87px;
 	vertical-align: top;
+}
+
+#tutbody .footer img {
+	max-height: 35px;
+
+}
+
+#tutbody .footer {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: #FFFFFF;
+}
+
+#tutbody .footer a {
+	color: #AAAAAA;
+}
+
+#winbody .hdr img {
+	height: 400px;
+	width: 500px;
+}
+
+#winbody .hdr {
+	text-align: center;
+}
+
+#winbody {
+    padding-bottom: 24px;
+    padding-top: 24px;
+}
+
+.explan {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: 'serif_pixel';
+	font-size: 16pt;
+	padding: 16px;
+   margin: 24px;
+       max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sideside img {
+	float: left;
+}
+
+
+.explan h1 {
+	background-color: #000000;
+	color: #FFFFFF;
+	font-size: 18pt
+	padding: 16pt;
+}
+
+.credits {
+	clear: both;
+	padding: 16px;
+	margin:24px;
+}
+
+.credits h2 {
+	margin-bottom: 8px;
+}
+
+.credits p {
+	margin: 6px;
 }

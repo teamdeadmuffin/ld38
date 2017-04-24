@@ -56,29 +56,74 @@ tut_body -->
              div([img([class(tut), src('/img/tut1.png')]),
                   img([class(tut), src('/img/tut2.png')]),
                   img([class(tut), src('/img/tut3.png')])
-                 ])
+                 ]),
+             div(class(footer) , [img(src('/img/swipl.png')), ' Powered by ', a(href('http://swi-prolog.org/'), 'SWI-Prolog')])
          ])).
 
 win_page(_Request) :-
     reply_html_page(
+        win,
         title('Félicette In Space'),
         \win_body
     ).
 
 win_body -->
-    html(div([p('Win page'), a(href='/game', 'RESTART')])).
+    html_requires(style),
+    html(div(id(winbody), [
+             div(class(hdr), img(src('/img/missioncomplete.svg'))),
+             div(class(explan), [
+                 h1('This game is dedicated to Félicette'),
+                 div(class(sideside), [
+                         img(src('/img/felicette.jpg')),
+p('On 18 October 1963 the French government safely recovered Félicette after her 15 minute flight aboard a Véronique AGI 47 sounding rocket.'),
+p('She reached a height of 156 kilometres. Félicette remains the only cat to have traveled in outer space.')
+                     ]),
+                div(class(credits), [
+                        h2('Dead Muffin Dev Team'),
+                        p('Antonio Cantarin - Sound'),
+                        p('Anne Ogborn - Programming'),
+                        p('Ymid Omri - Visual')
+                    ])
+                 ])
+             ])).
+
+
 
 lose_page(_Request) :-
     reply_html_page(
+        win,
         title('Félicette In Space'),
         \lose_body
     ).
 
-lose_body -->
-    html(div([p('lose page'), a(href='/game', 'RESTART')])).
+lose_body -->   % rubbish
+    html_requires(style),
+    html(div(id(winbody), [
+             div(class(hdr), img(src('/img/missioncomplete.svg'))),
+             div(class(explan), [
+                 h1('This game is dedicated to Félicette'),
+                 div(class(sideside), [
+                         img(src('/img/felicette.jpg')),
+p('On 18 October 1963 the French government safely recovered Félicette after her 15 minute flight aboard a Véronique AGI 47 sounding rocket.'),
+p('She reached a height of 156 kilometres. Félicette remains the only cat to have traveled in outer space.')
+                     ]),
+                div(class(credits), [
+                        h2('Dead Muffin Dev Team'),
+                        p('Antonio Cantarin - Sound'),
+                        p('Anne Ogborn - Programming'),
+                        p('Ymid Omri - Visual')
+                    ])
+                 ])
+             ])).
+
+
+
 
 user:body(game, Body) -->
         html(body(class(game), Body)).
+
+user:body(win, Body) -->
+        html(body(class(win), Body)).
 
 main_page(_Request) :-
     reply_html_page(
