@@ -1,4 +1,5 @@
 <g id="scrollme" transform="translate(-7680 -7680)" >
 	<g id="world" >
 	 	<rect x="0" y="0" width="65536" height="65536" fill="url(#starz)" />
+	 	<use xlink:href="#earth"  id="earthinstance" width="900.8" height="1024" x="-450.4" y="-512" transform="translate(32786 32786)" style="overflow:visible;"/>
 	   <g id="asteroids" >
