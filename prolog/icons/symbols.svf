@@ -847,7 +847,7 @@
 	.earth1{fill:#FCFCFB;stroke:#FEFEFD;stroke-miterlimit:10;}
 	.earth2{fill:#FCFCFB;}
 	.earth3{fill:#62BA54;}
-	.earth4{opacity:0.57;fill:#FFFFFF;}
+	.earth4{opacity:0.10;fill:#FFFFFF;}
 	.earth5{fill:#71C15F;}
 ]]>
 </style>
