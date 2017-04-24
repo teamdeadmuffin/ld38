@@ -55,7 +55,8 @@ control_panel -->
         random_member(Src, ['/audio/finding_way_home.mp3', '/audio/loop2.mp3'])
     },
     html([div(input([id(keysink), type(text)], [])),
-         audio([loop(true), src(Src), autoplay(true)], [])
+         audio([loop(true), src(Src), autoplay(true)], []),
+         audio([loop(false), src('/audio/crystal0.mp3'), autoplay(false)], [])
          ]).
 
 main_svg -->
