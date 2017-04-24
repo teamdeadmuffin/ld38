@@ -21,6 +21,8 @@ var cy = 32768.0;
 var aimdelta = 0.0;
 var aimlimit = 300.0;
 
+var oxygen = 100.0;
+
 function gameloop() {
 	$("#keysink").focus();
 
@@ -88,8 +90,6 @@ function gameloop() {
 				$("#asteroids use.powerup[asteroid='" + asteroid + "']").remove();
 			}
 		});
-		
-
 
 	   var earthr = Math.sqrt((cx - earthx)*(cx - earthx) + (cy - earthy) * (cy - earthy) );
 		var gearth = gconst / earthr / earthr * 64.0;
