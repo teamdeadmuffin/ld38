@@ -23,10 +23,14 @@ user:file_search_path(audio, './audio').
 go :- go(8080).
 
 go(Port) :-
-    http_server(http_dispatch, [port(Port)]).
+    http_server(http_dispatch, [port(Port), timeout(1200), workers(16)]).
 
 % :- http_handler(/, tut_page, []).
-:- http_handler(/, main_page, []).
+:- http_handler('/game', main_page, []).
+:- http_handler('/', tut_page, []).
+:- http_handler('/win', win_page, []).
+:- http_handler('/lose', lose_page, []).
+
 
 :- http_handler(js(.), http_reply_from_files('js/', []),
            [priority(1000), prefix]).
@@ -34,12 +38,51 @@ go(Port) :-
                 [priority(1000), prefix]).
 :- http_handler(img(.), http_reply_from_files('icons/', []),
                 [priority(1000), prefix]).
-:- http_handler(audio(.), http_reply_from_files('audio/', []),
+:- http_handler(audio(.), http_reply_from_files('audio/', [time_limit(infinite)]),
                 [priority(1000), prefix]).
+
+
+tut_page(_Request) :-
+    reply_html_page(
+        title('Félicette In Space'),
+        \tut_body
+    ).
+
+tut_body -->
+    html_requires(style),
+    html(div(id(tutbody), [
+             div(img([class(logo), src('/img/titlewebcs5.jpg')])),
+             div([img([class(tut), src('/img/tut1.png')]),
+                  img([class(tut), src('/img/tut2.png')]),
+                  img([class(tut), src('/img/tut3.png')])
+                 ])
+         ])).
+
+win_page(_Request) :-
+    reply_html_page(
+        title('Félicette In Space'),
+        \win_body
+    ).
+
+win_body -->
+    html(div([p('Win page'), a(href='/game', 'RESTART')])).
+
+lose_page(_Request) :-
+    reply_html_page(
+        title('Félicette In Space'),
+        \lose_body
+    ).
+
+lose_body -->
+    html(div([p('lose page'), a(href='/game', 'RESTART')])).
+
+user:body(game, Body) -->
+        html(body(class(game), Body)).
 
 main_page(_Request) :-
     reply_html_page(
-        title('Félicette The Space Miner!'),
+        game,
+        title('Félicette In Space'),
         \main_body
     ).
 
@@ -55,7 +98,8 @@ control_panel -->
     },
     html([div(input([id(keysink), type(text)], [])),
          audio([loop(true), src(Src), autoplay(true)], []),
-         audio([src('/audio/crystal0.mp3')], [])
+         audio([src('/audio/crystal0.mp3')], []),
+         audio([id(oxygenpick), src('/audio/oxygen_pick.mp3')], [])
          ]).
 
 main_svg -->

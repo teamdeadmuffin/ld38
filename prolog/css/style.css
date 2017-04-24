@@ -16,8 +16,25 @@
 	
 }
 
-body {
+body.game {
 	overflow: hidden;
 	  width: 100%;
   height: 100%;
+}
+
+
+#tutbody .logo {
+	height:	600px;
+	width: 600px;
+}
+
+#tutbody {
+	background-color: #141728;
+	width: 100%;
+	text-align: center;
+}
+
+#tutbody .tut {
+	width: 30%;
+	vertical-align: top;
 }

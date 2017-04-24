@@ -45,7 +45,7 @@ function do_oxygen() {
 	$("#o2level .o2bar").attr("display", "none");
 	
 	var level = "#green_bar_" + String(10 * Math.round(oxygen / 10.0));
-	console.log(level);
+
 	$(level).attr("display", "inherit");
 	
 	oxygen -= 0.1; // 100 secs of oxygen
@@ -82,9 +82,6 @@ function gameloop() {
 				aim = Math.max(-charge, aim);
 			else 
 			   aim = Math.min(charge, aim);
-			   
-			console.log("aim " + String(aim));
-			console.log("charge " + String(charge));
 			
 			catvx = charge * (cx - myworldx) / localr - aim * (cy - myworldy) / localr;
 			catvy = charge * (cy - myworldy) / localr + aim * (cx - myworldx) / localr;
@@ -97,8 +94,6 @@ function gameloop() {
 			return;
 		}
 	}
-
-	console.log('applying physics');
 
 // compute the local g
 
@@ -122,7 +117,17 @@ function gameloop() {
 				myworldy = acy;
 				
 				var asteroid = $(this).attr("gameid");  // caution - string!
+				$("#asteroids use.powerup.oxygen[asteroid='" + asteroid + "']").each(function() {
+					oxygen = 100.0;
+					$("#oxygenpick").each(function(){
+						this.currentTime = 0;
+						this.play();
+					});
+				});
+				
 				$("#asteroids use.powerup[asteroid='" + asteroid + "']").remove();
+				
+				
 			}
 		});
 
@@ -201,5 +206,12 @@ $(function() {
 
 });
 
-
+/*
+     
+	$("#oxygenpick").each(function(){
+		this.onended = function() {
+			console.log("oxygenpick ended"); 
+			};
+		});
+		*/
 
