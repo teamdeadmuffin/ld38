@@ -88,6 +88,18 @@ function gameloop() {
 				$("#asteroids use.powerup[asteroid='" + asteroid + "']").remove();
 			}
 		});
+		
+
+
+	   var earthr = Math.sqrt((cx - earthx)*(cx - earthx) + (cy - earthy) * (cy - earthy) );
+		var gearth = gconst / earthr / earthr * 64.0;
+		     
+		gx = gx + gearth * (earthx - cx) / earthr;
+		gy = gy + gearth * (earthy - cy) / earthr;
+		if(earthr < 300.0) {
+			console.log('win game');
+			window.location.href = "/win";
+		};	
 
 	if(flying) {
 		// move the cat
