@@ -83,6 +83,9 @@ function gameloop() {
 				catvy = 0.0;
  				myworldx = acx;
 				myworldy = acy;
+				
+				var asteroid = $(this).attr("gameid");  // caution - string!
+				$("#asteroids use.powerup[asteroid='" + asteroid + "']").remove();
 			}
 		});
 
