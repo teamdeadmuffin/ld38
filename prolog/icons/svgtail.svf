@@ -1,7 +1,7 @@
 		</g>
 	</g>
 	<g id="player">
-		<circle id="cat" fill="#FE330A" cx="32768.0" cy="32768.0" r="80"/>
+		<use xlink:href="#catsymbol"  id="cat" width="263.9" height="156.7" x="-132" y="-78.4" transform="translate(32786 32786)" style="overflow:visible;"/>
 	</g>
 </g>
 </svg>

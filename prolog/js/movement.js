@@ -68,7 +68,7 @@ function gameloop() {
   var gx = 0.0;
   var gy = 0.0;
 
-	$("#asteroids use").each(function() {
+	$("#asteroids use.asteroid").each(function() {
 			var acx = Number($(this).attr("gamex"));
 			var acy = Number($(this).attr("gamey"));
 			var grnd = Number($(this).attr("gamerad"));
@@ -87,11 +87,13 @@ function gameloop() {
 		});
 
 	if(flying) {
+		// move the cat
 		catvx = catvx + gx;
 		catvy = catvy + gy;
 		cx = cx + catvx;
 		cy = cy + catvy;
 		
+		// wrap the cat in the world
 		if (cx < worldmarginx)
 			cx += worldsizex - worldmarginx;
 		else if (cx > worldsizex - worldmarginx)
@@ -102,10 +104,20 @@ function gameloop() {
 		else if (cy > worldsizey - worldmarginy)
 			cy -= worldsizey - worldmarginy;
 			
-		$("#cat").attr("cx", String(cx));
-		$("#cat").attr("cy", String(cy));
+		// rotate the cat
+	   catrot = 180.0 / 3.1416 * Math.atan2(gx, gy);
 
-		$("#scrollme").attr("transform", "translate(" + String(-cx + 512) + ", " + String(-cy + 512) + ")")
+		if(isNaN(catrot)) catrot = 0.0;
+
+		$("#cat").attr("transform", "translate(" + String(cx) + ", " + String(cy) + ") scale(-1 1) rotate(" + String(180.0 +catrot) + " 0 0)")
+
+		$("#scrollme").attr("transform", "translate(" + String(-cx + 640) + ", " + String(-cy + 340) + ")");
+
+/*  uncomment this, comment line above to rotate world
+		$("#scrollme").attr("transform", "translate(" + String(640-cx) + ", " + String(520-cy) + ") rotate(" + (catrot) + 
+		    " " + String(cx) + " " + String(cy) + ")");
+	*/
+
 	} else {
 		catvx = 0.0;
 		catvy = 0.0;
