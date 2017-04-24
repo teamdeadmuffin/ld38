@@ -89,7 +89,7 @@ asteroids(N, AsteroidsSoFar) -->
       RadScale is (6.0 + 6.0 * random_float) / 10.0,
       GRad is 200.0 * RadScale + 60.0,
       format(string(S) ,
- '<use xlink:href="#asteroid~w"  class="asteroid" id="a~w" width="404" height="404" x="-202" y="-201.999" transform="translate(~w ~w) scale(~w) rotate(~w 0 0)" gamerad="~w" gamex="~w" gamey="~w" overflow="visible"/>~n', [M, N, X, Y, RadScale, R, GRad, X, Y])
+ '<use xlink:href="#asteroid~w"  class="asteroid" id="a~w" gameid="~w" width="404" height="404" x="-202" y="-201.999" transform="translate(~w ~w) scale(~w) rotate(~w 0 0)" gamerad="~w" gamex="~w" gamey="~w" overflow="visible"/>~n', [M, N, N, X, Y, RadScale, R, GRad, X, Y])
     },
     html(\[S]),
     crystals_for(N, X, Y, RadScale, _Points, _Oxygen),   % DARN IT JAN
@@ -128,23 +128,23 @@ powerup_('red-crystal', Asteroid, X, Y, R, S) :-
       random_between(0, 359, Rot),
       random_between(-15, 15, Rot2),
       format(string(S) ,
-             '<use xlink:href="#crystal3"  width="50.797" height="93.546" x="-25.399" y="-46.773" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, R, Rot2, Asteroid]).
+             '<use xlink:href="#crystal3" class="powerup crystal" width="50.797" height="93.546" x="-25.399" y="-46.773" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, R, Rot2, Asteroid]).
 powerup_('green-crystal', Asteroid, X, Y, R, S) :-
       random_between(0, 359, Rot),
       random_between(-15, 15, Rot2),
       format(string(S) ,
-             '<use xlink:href="#crystal1"  width="50.797" height="93.546" x="-25.399" y="-46.773" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, R, Rot2, Asteroid]).
+             '<use xlink:href="#crystal1" class="powerup crystal"  width="50.797" height="93.546" x="-25.399" y="-46.773" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, R, Rot2, Asteroid]).
 powerup_('blue-crystal', Asteroid, X, Y, R, S) :-
       random_between(0, 359, Rot),
       random_between(-15, 15, Rot2),
       format(string(S) ,
-             '<use xlink:href="#crystal2"  width="50.797" height="93.546" x="-25.399" y="-46.773" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, R, Rot2, Asteroid]).
+             '<use xlink:href="#crystal2" class="powerup crystal"  width="50.797" height="93.546" x="-25.399" y="-46.773" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, R, Rot2, Asteroid]).
 powerup_(oxygen, Asteroid, X, Y, R, S) :-
       random_between(0, 359, Rot),
       random_between(-45, 45, Rot2),
       RR is random_float * R,
       format(string(S) ,
-             '<use xlink:href="#oxygen"  width="56.667" height="144.778" x="-28.334" y="-72.389" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, RR, Rot2, Asteroid]).
+             '<use xlink:href="#oxygen" class="powerup oxygen"  width="56.667" height="144.778" x="-28.334" y="-72.389" transform="translate(~w ~w) rotate(~w 0 0) translate(0 ~w) rotate(~w 0 0)" asteroid="~w" overflow="visible"/>', [X, Y,Rot, RR, Rot2, Asteroid]).
 
 safe_location(X, Y, AX-AY) :-
     RSQ is (X - AX)* (X - AX) + (Y - AY) * (Y - AY),
