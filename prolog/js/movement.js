@@ -22,9 +22,44 @@ var aimdelta = 0.0;
 var aimlimit = 300.0;
 
 var oxygen = 100.0;
+var lives = 9;  // cats have 9 lives
+
+function lose_life() {
+	lives = lives - 1;
+	
+	if (lives < 1)
+		window.location.href = "/lose";
+		
+	$(".life-indicator").each(function(){
+		var logan = Number($(this).attr("logan"));
+		
+		if(logan <= lives) {
+			$(this).attr("display", "inherit");
+		} else {
+			$(this).attr("display", "none");
+		}
+	});
+}
+
+function do_oxygen() {
+	$("#o2level .o2bar").attr("display", "none");
+	
+	var level = "#green_bar_" + String(10 * Math.round(oxygen / 10.0));
+	console.log(level);
+	$(level).attr("display", "inherit");
+	
+	oxygen -= 0.1; // 100 secs of oxygen
+	
+	if(oxygen <= 0) {
+		lose_life();
+		oxygen = 100.0;
+	}
+}
 
 function gameloop() {
 	$("#keysink").focus();
+	
+	do_oxygen();
 
 	if (!flying) {
 		if(charging) {

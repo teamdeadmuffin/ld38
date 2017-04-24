@@ -66,6 +66,7 @@ main_svg -->
     html(\[JS]),
     contents_of_file(icons('svgheader.svf')),
     contents_of_file(icons('symbols.svf')),
+    contents_of_file(icons('rocket.svf')),
     contents_of_file(icons('scrollmehdr.svf')),
     {
         format(string(S), '<use xlink:href="#earth_1_"  id="earth" width="900.8" height="1024" x="-450.4" y="-512" transform="translate(~w ~w)" style="overflow:visible;"/><g id="asteroids" >', [EarthX, EarthY])

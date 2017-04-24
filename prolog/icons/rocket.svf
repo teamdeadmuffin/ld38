@@ -14,8 +14,8 @@
 	.rocket11{fill:#362E2F;}
 	.rocket12{fill:#D00000;}
 	.rocket13{fill:#070606;}
-</style>
 ]]>
+</style>
 <symbol  id="rocket_1_" viewBox="-226.1 -226.7 452.2 453.3">
 	<g id="controls_2_">
 		<g id="rocket_body_2_">
@@ -983,17 +983,17 @@
 					</g>
 				</g>
 			</g>
-			<g id="o2level_2_">
-				<polygon id="green_bar_100_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -13.2,58.3 55.1,31.6 				"/>
-				<polygon id="green_bar_90_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -18.9,43.7 49.4,17 				"/>
-				<polygon id="green_bar_80_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -24,30.6 44.3,3.9 				"/>
-				<polygon id="green_bar_70_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -28.2,19.8 40.1,-6.9 				"/>
-				<polygon id="green_bar_60_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -31.5,11.4 36.8,-15.3 				"/>
-				<polygon id="green_bar_50_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -36.5,-1.4 31.8,-28 				"/>
-				<polygon id="green_bar_40_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -39.4,-8.8 28.9,-35.5 				"/>
-				<polygon id="green_bar_30_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -43.7,-20 24.6,-46.7 				"/>
-				<polygon id="green_bar20_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -51.1,-38.9 17.2,-65.6 				"/>
-				<polygon id="green_bar10_3_" class="rocket1" points="6.4,-93.1 -61.9,-66.4 -56.5,-52.7 11.8,-79.3 				"/>
+			<g id="o2level">
+				<polygon id="green_bar_100" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -13.2,58.3 55.1,31.6 				"/>
+				<polygon id="green_bar_90" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -18.9,43.7 49.4,17 				"/>
+				<polygon id="green_bar_80" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -24,30.6 44.3,3.9 				"/>
+				<polygon id="green_bar_70" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -28.2,19.8 40.1,-6.9 				"/>
+				<polygon id="green_bar_60" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -31.5,11.4 36.8,-15.3 				"/>
+				<polygon id="green_bar_50" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -36.5,-1.4 31.8,-28 				"/>
+				<polygon id="green_bar_40" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -39.4,-8.8 28.9,-35.5 				"/>
+				<polygon id="green_bar_30" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -43.7,-20 24.6,-46.7 				"/>
+				<polygon id="green_bar_20" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -51.1,-38.9 17.2,-65.6 				"/>
+				<polygon id="green_bar_10" class="o2bar rocket1" points="6.4,-93.1 -61.9,-66.4 -56.5,-52.7 11.8,-79.3 				"/>
 			</g>
 			<g id="above_2_">
 				<g id="outside_body_rocket_2_">
@@ -1982,31 +1982,31 @@
 		</g>
 	</g>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life1" xlink:href="/img/220EA69F.png"  transform="matrix(5.914500e-002 0 0 -5.914500e-002 -135.4663 -104.3105)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="1" xlink:href="/img/220EA69F.png"  transform="matrix(5.914500e-002 0 0 -5.914500e-002 -135.4663 -104.3105)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life2" xlink:href="/img/220EA69D.png"  transform="matrix(-6.036600e-002 0 0 -6.036600e-002 -104.6592 -20.7637)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="2" xlink:href="/img/220EA69D.png"  transform="matrix(-6.036600e-002 0 0 -6.036600e-002 -104.6592 -20.7637)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life3" xlink:href="/img/220EA6A3.png"  transform="matrix(-6.988600e-002 0 0 -6.988600e-002 -102.0439 95.3823)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="3" xlink:href="/img/220EA6A3.png"  transform="matrix(-6.988600e-002 0 0 -6.988600e-002 -102.0439 95.3823)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life4" xlink:href="/img/220EA6A5.png"  transform="matrix(-5.546900e-002 0 0 -5.546900e-002 -62.0029 180.6411)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="4" xlink:href="/img/220EA6A5.png"  transform="matrix(-5.546900e-002 0 0 -5.546900e-002 -62.0029 180.6411)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life5" xlink:href="/img/220EA6A7.png"  transform="matrix(4.738700e-002 0 0 -4.738700e-002 -41.5884 214.1895)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="5" xlink:href="/img/220EA6A7.png"  transform="matrix(4.738700e-002 0 0 -4.738700e-002 -41.5884 214.1895)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life6" xlink:href="/img/220EA6A4.png"  transform="matrix(5.546900e-002 0 0 -5.546900e-002 61.687 180.5391)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="6" xlink:href="/img/220EA6A4.png"  transform="matrix(5.546900e-002 0 0 -5.546900e-002 61.687 180.5391)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life7" xlink:href="/img/220EA6AC.png"  transform="matrix(6.577200e-002 0 0 -6.577200e-002 103.062 90.2607)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="7" xlink:href="/img/220EA6AC.png"  transform="matrix(6.577200e-002 0 0 -6.577200e-002 103.062 90.2607)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life8" xlink:href="/img/220EA6AD.png"  transform="matrix(5.577400e-002 0 0 -5.577400e-002 110.395 -26.6582)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="8" xlink:href="/img/220EA6AD.png"  transform="matrix(5.577400e-002 0 0 -5.577400e-002 110.395 -26.6582)">
 	</image>
 	
-		<image style="overflow:visible;" width="1600" height="1300" id="life9" xlink:href="/img/220EA6AF.png"  transform="matrix(5.833800e-002 0 0 -5.833800e-002 42.3687 -104.1514)">
+		<image style="overflow:visible;" width="1600" height="1300" class="life-indicator" logan="9" xlink:href="/img/220EA6AF.png"  transform="matrix(5.833800e-002 0 0 -5.833800e-002 42.3687 -104.1514)">
 	</image>
 	<g id="abovelives_2_">
 		<g>

@@ -4,4 +4,5 @@
 		<use xlink:href="#catsymbol"  id="cat" width="263.9" height="156.7" x="-132" y="-78.4" transform="translate(32786 32786)" style="overflow:visible;"/>
 	</g>
 </g>
+<use xlink:href="#rocket_1_"  id="rocket" width="452.2" height="453.3" x="-226.1" y="-226.7" transform="translate(180 180) scale(0.5) rotate(180) scale(-1 1)" style="overflow:visible;"/>
 </svg>
