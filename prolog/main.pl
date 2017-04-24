@@ -99,7 +99,7 @@ lose_page(_Request) :-
 lose_body -->   % rubbish
     html_requires(style),
     html(div(id(winbody), [
-             div(class(hdr), img(src('/img/missioncomplete.svg'))),
+             div(class(hdr), img(src('/img/missionfailed.svg'))),
              div(class(explan), [
                  h1('This game is dedicated to Félicette'),
                  div(class(sideside), [
