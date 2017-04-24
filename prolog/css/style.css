@@ -38,3 +38,12 @@ body.game {
 	width: 30%;
 	vertical-align: top;
 }
+
+#tutbody .start {
+	position: relative;
+	left: -418px;
+	top:	460px;
+	width: 239px;
+	height: 87px;
+	vertical-align: top;
+}

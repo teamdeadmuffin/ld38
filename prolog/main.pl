@@ -51,7 +51,8 @@ tut_page(_Request) :-
 tut_body -->
     html_requires(style),
     html(div(id(tutbody), [
-             div(img([class(logo), src('/img/titlewebcs5.jpg')])),
+             div([img([class(logo), src('/img/titlewebcs5.jpg')]),
+                  a(href('/game'), img([class(start), src('/img/start.png')]))]),
              div([img([class(tut), src('/img/tut1.png')]),
                   img([class(tut), src('/img/tut2.png')]),
                   img([class(tut), src('/img/tut3.png')])
