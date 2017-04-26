@@ -126,3 +126,10 @@ body.game {
 .credits p {
 	margin: 6px;
 }
+
+.instruct p {
+	color: #FFFFFF;
+	padding: 8px;
+	font-family: serif_pixel;
+	font-size: 18pt;
+}

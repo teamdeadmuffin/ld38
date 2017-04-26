@@ -57,6 +57,7 @@ tut_body -->
                   img([class(tut), src('/img/tut2.png')]),
                   img([class(tut), src('/img/tut3.png')])
                  ]),
+             div(class(instruct), p('Hold space bar down to charge, release to jump')),
              div(class(footer) , [img(src('/img/swipl.png')), ' Powered by ', a(href('http://swi-prolog.org/'), 'SWI-Prolog')])
          ])).
 
